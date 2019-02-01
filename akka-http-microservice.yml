@@ -1,1 +1,22 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_CLIENT_SERVICEURL_DEFAULTZONE}
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
 
+
+feign:
+  hystrix:
+    enabled: true
+  client:
+    config:
+      postcode-client:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+      spring-microservice:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
